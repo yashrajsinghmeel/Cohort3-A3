@@ -21,7 +21,7 @@ This project was built to master the fundamentals of  **modern CSS layout and UI
 To bring this project to life, I used:
 
 * **HTML5:** The skeletal structure of our Congregation.
-* **CSS3:** The yellow fur and rosy cheeks (styling, flexbox, and grid).
+* **CSS3:** Glassmorphism & Cyber-Noir Palette (styling, flexbox, and grid).
 * **GitHub Pages:** To make the project live for you all  to see.
 
 # 🌑Assignment Context
