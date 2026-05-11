@@ -20,14 +20,14 @@ This project was built to master the fundamentals of  **modern CSS layout and UI
 
 To bring this project to life, I used:
 
-* **HTML5:** The skeletal structure of our Insights.
+* **HTML5:** The skeletal structure of our Congregation.
 * **CSS3:** The yellow fur and rosy cheeks (styling, flexbox, and grid).
 * **GitHub Pages:** To make the project live for you all  to see.
 
 # 🌑Assignment Context
 
 * **School:** Sheryians Coding School
-* **Program:** Cohort 3.0 ( Assignment-2 )
+* **Program:** Cohort 3.0 ( Assignment-3 )
 * **Objective:** UI/UX Recreation & CSS Mastery
 
 # Made with ⚡ and 💛 by [ Yashraj Singh Meel ]
