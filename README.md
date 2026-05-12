@@ -10,7 +10,7 @@ Welcome to my design assignment for the  **Sheryians Coding School Cohort 3.0**
 
 [Live link | Silent Congregation](https://yashrajsinghmeel.github.io/Cohort3-A3/)
 
-![1778521321133](image/README/1778521321133.png)
+![1778560454410](image/README/1778560454410.png)
 
 # ☠️ A Note for the Reviewer
 

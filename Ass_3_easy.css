@@ -67,13 +67,13 @@ width: 20%;
 height: 47%;
 border-radius: 20px;
 /* margin-bottom: 3%; */
-padding: 2%;
+padding: 1.5%;
 }
 
 .card .image{
     border: solid;
     width: 100%;
-    height: 60%;
+    height: 70%;
     border-radius:17px ;
     overflow: hidden;
 }
@@ -94,7 +94,7 @@ padding: 2%;
     flex-direction: column;
     justify-content: space-between;
     /* border: solid; */
-    height: 40%;
+    height: 30%;
 }
 
 .card .textContent .description{
@@ -131,12 +131,14 @@ padding: 2%;
 
 .textContent .capsuleButton{
 border: solid #b077e3;
-font-size: larger;
-padding: 0 30px;
+font-size: large;
+padding: 0 1rem;
+margin: 0 auto;
 background-color: transparent;
-height: 40%;
+width:85% ;
+height: 42%;
 color: white;
-font-weight: bold;
+/* font-weight: bold; */
 border-radius: 9999px;
 }
 
