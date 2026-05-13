@@ -1,0 +1,370 @@
+@font-face {
+  font-family: Kallisto-bold;
+  src: url(./Ass_3_hard_assets/fonnts.com-Kallisto_Bold.otf);
+}
+@font-face {
+  font-family: Apotex-bold;
+  src: url(./Ass_3_hard_assets/fonnts.com-Apotek_Extended_Bold.otf);
+}
+@font-face {
+  font-family: Corpta;
+  src: url(./Ass_3_hard_assets/Corpta\ DEMO.otf);
+}
+@font-face {
+  font-family: Savery;
+  src: url(./Ass_3_hard_assets/Savery.ttf);
+}
+@font-face {
+  font-family: Metropolis;
+  src: url(./Ass_3_hard_assets/Metropolis-Regular.otf);
+}
+@font-face {
+  font-family: ElMessiri;
+  src: url(./Ass_3_hard_assets/ElMessiri-VariableFont_wght.ttf);
+}
+
+:root {
+  --variable-name: value;
+
+  /* fonts */
+
+  --font-ElMessiri: "ElMessiri";
+  --font-metropolis-regular: "Metropolis";
+  --font-savery: "Savery";
+  --font-Corpta: "Corpta";
+  --font-kallisto-bold: "Kallisto-bold";
+  --font--apotex-bold: "Apotex-bold";
+
+  /* Main Background ( Matte Charcoal/Off-Black) */
+
+  --clr-Pure-Black: #000000;
+  --clr-classic-matte: #121212; /* Standard dark mode surface, very neutral*/
+  --clr-cool-charcoal: #1a1a24; /* Has a very slight blue/purple undertone that complements pink well */
+  --clr-deep-void: #0a0a0c; /* Extremely dark, best if you want the neon to look overwhelmingly bright */
+
+  /* Neon Pink Borders */
+  /* For border, you want a highly saturated, vibrant pink that cuts through the dark background. */
+  --clr-border-cyberpunk-hot-pink: #ff007f;
+  --clr-border-electric-magenta: #e900ff;
+  --clr-border-luminous-rose: #ff2a9d;
+
+  /* Headings (Pink) */
+  /* If you are using pink for the text itself (rather than just a glow), it needs to be slightly lighter than your border pinks to remain readable. */
+  --clr-headings-bright-bubblegum: #ff66b2; /* Excellent readability against dark backgrounds */
+  --clr-headings-vivid-neon: #ff1493; /* Classic deep pink, striking but may require a slight text-shadow for perfect legibility */
+  --clr-headings-pastel-cyber-pink: #ff99cc; /* Softer, great for very large heading fonts*/
+
+  /* Box Shadow (Pink and White Glow) */
+  /* To get that true "neon tube" effect, you layer  a tight white glow inside a wider, softer pink glow. */
+
+  --box-shadow-subtle-and-clean:
+    0 0 5px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 0, 127, 0.6);
+  --box-shadow-intense-overdrive:
+    0 0 8px #fff, 0 0 20px #ff007f, 0 0 40px #ff007f;
+  --box-shadow-inner-and-outer-glow:
+    0 0 15px rgba(255, 0, 127, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.5);
+
+  /* Neon Pink and White Diffused Gradient Background */
+  /* These are great for active buttons, badges, or accent banners. */
+
+  --gradient-bg-smooth-diagonal: linear-gradient(
+    135deg,
+    rgba(255, 0, 127, 0.9) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  --gradient-bg-harsh-cyberpunk-angle: linear-gradient(
+    170deg,
+    #ff007f 30%,
+    #ffffff 100%
+  );
+  --gradient-bg-radial-core-glow: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 0, 127, 1) 40%,
+    rgba(200, 0, 100, 0.8) 100%
+  );
+
+  /* Small text (Shades of Gray) */
+  /* For paragraphs and secondary info, you need a gray that is easy to read but doesn't distract from the main neon elements. */
+
+  --clr-text-high-readability: #e0e0e0; /*Very light gray, good for larger bolcks of text*/
+  --clr-text-muted-silver: #a0a0b0; /* Has a slight cool tint to bridge the gap between black and pink.*/
+  --clr-text-dimmed-tech: #8e8e93; /*Darker gray, best for metadata, dates, or footer text*/
+
+  /* Neon Pink and Transparent Diffused Gradient */
+  /* These are perfect for hovering over character cards, image overlays, or creating a glowing "floor" effect at the bottom of a container. */
+
+  --clr-gradient-bg-fade-to-bottom: linear-gradient(
+    to bottom,
+    rgba(255, 0, 127, 0.4) 0%,
+    rgba(255, 0, 127, 0) 100%
+  );
+  --clr-gradient-bg-corner-spotlight-overlay-right: radial-gradient(
+    circle at top right,
+    rgba(255, 0, 127, 0.5) 0%,
+    transparent 70%
+  );
+  --clr-gradient-bg-corner-spotlight-overlay-left: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 127, 0.5) 0%,
+    transparent 70%
+  );
+  --clr-gradient-bg-subtle-edge-bleed: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 0, 127, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-color: var(--clr-Pure-Black);
+  color: var(--clr-text-high-readability);
+  /* color: white; */
+}
+
+/* remove default styling of button */
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+nav {
+  width: 100%;
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  border: solid black;
+  height: 100px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */ /* doubt:2*/
+  height: 100%;
+  flex-grow: 1; /* Takes 1 part of space */
+  flex-basis: 0;
+  /* border: solid; */
+}
+.logo img {
+  width: 80%;
+  /* align-self: center; */
+  /* border: solid; */
+  /* flex-shrink:0; */
+}
+.navLinks {
+  font-family: "kallisto-bold";
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-grow: 3; /* Takes 3 parts of space */
+  flex-basis: 0;
+  /* border: solid; */
+}
+.navLinks ul {
+  width: 100%;
+  height: 100%;
+  /* border: solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  list-style: none;
+  text-decoration: none;
+}
+.navLinks ul a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.contact-btn {
+  font-family: "Kallisto-bold";
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1; /* Takes 1 part of space */
+  flex-basis: 0;
+  /* border: solid; */
+}
+.contact-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7%;
+  border: solid var(--clr-border-electric-magenta);
+  width: 62%;
+  height: 50%;
+  align-self: center;
+  border-radius: 25px;
+}
+
+.contact-btn button img {
+  /* align-self: self-end; */
+  height: 60%;
+}
+
+main {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  border: solid;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.hero .huntress-background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 80%;
+  border: solid;
+}
+
+.hero .info-foreground {
+  padding: 0 5%;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  border: solid;
+}
+
+.hero .info-foreground .intro-text {
+  display: flex;
+  gap: 4%;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 0;
+  flex-grow: 2;
+  /* border: solid; */
+}
+
+.intro-text .eyebrow-text {
+  font-family: var(--font-Corpta);
+  font-size: 2rem;
+  /* border: solid; */
+}
+
+.intro-text .main-heading-text {
+  color: var(--clr-headings-vivid-neon);
+  font-size: 7rem;
+  font-family: var(--font-savery);
+  /* border: solid; */
+}
+
+.intro-text .subheading-text {
+  font-family: var(--font-kallisto-bold);
+  /* border: solid; */
+}
+.intro-text .body-text {
+  width: 60%;
+  line-height: 1.2;
+  font-family: var(--font-ElMessiri);
+  /* border: solid; */
+}
+.intro-text .btn-wrapper {
+  display: flex;
+  gap: 15%;
+  /* justify-content: space-around; */
+  /* border: solid; */
+}
+
+.btn-wrapper .left-button {
+  font-family: var(--font-kallisto-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: solid; */
+}
+
+.left-button button {
+  height: 60px;
+  width: 250px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: solid var(--clr-border-cyberpunk-hot-pink);
+  /* box-shadow: var(--box-shadow-inner-and-outer-glow); */
+  background: var(--clr-gradient-bg-corner-spotlight-overlay-right);
+}
+
+.left-button button svg {
+  height: 30px;
+}
+
+.hero .info-foreground .empty-character-window {
+  flex-basis: 0;
+  flex-grow: 3;
+  border: solid;
+}
+
+.hero .huntress-abilities {
+  flex-basis: 0;
+  flex-grow: 1;
+  border: solid;
+}
+
+/* 
+.logo {
+    height: 100%;
+    flex-basis: 20%;
+    border: solid;
+}
+.navLinks {
+    height: 100%;
+    flex-basis: 60%;
+    border: solid;
+}
+.contact-btn {
+    height: 100%;
+    flex-basis: 20%;
+    border: solid;
+}
+
+Your nav selector uses position: sticky; but it might fail if any parent element in your HTML has overflow: hidden;
+
+The flex-basis property is not working because fr (fractional) units are invalid in Flexbox. The fr unit only works in CSS Grid.
+
+Good combo to use fr type of layout in flex:
+{
+flex-basis:0;
+flex-grow:1
+}
+
+*/
+
+/* 
+why the child automatically takes the height of the parent class when display-flex is applied on the parent container?
+
+// This default behaviour overrides with 
+justify-content:center; 
++ align-items:center; // on parent container.
++ align-self: center; // on child container.
+
+ */
