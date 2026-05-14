@@ -8,11 +8,7 @@ Welcome to my design assignment for the  **Sheryians Coding School Cohort 3.0**
 
 # 🎞️ Sneak Peek
 
-[New addition Ass-3-Hard | Valkyrie Huntress Corp](https://yashrajsinghmeel.github.io/Cohort3-A3/Ass_3_hard/)
-
-![1778761768973](image/README/1778761768973.mp4)
-
-![1778761836200](image/README/1778761836200.png)
+[New addition Ass-3-Hard | Valkyrie Huntress Corp](https://yashrajsinghmeel.github.io/Cohort3-A3/Ass_3_hard/)![1778762292678](image/README/1778762292678.png)
 
 [Live link | Silent Congregation](https://yashrajsinghmeel.github.io/Cohort3-A3/)
 
