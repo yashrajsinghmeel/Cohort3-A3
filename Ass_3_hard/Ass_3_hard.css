@@ -302,7 +302,8 @@ main {
 .slide-content{
 position: relative;
   width: 100%;
-  /* max-width: 600px; Adjust this to fit your image dimensions */
+  /* Adjust this to fit your image dimensions 
+  max-width: 600px; */
   height: 100%;
   display: flex;
   align-items: center;
@@ -311,20 +312,44 @@ position: relative;
 }
 
 .slide-content .bg-ring{
-  overflow: hidden;
+  /* overflow: hidden; */
   position: absolute;
   z-index: 1;
+  /* 1. Force the wrapper to cover the entire slide content perfectly */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 99%;
+  height: 100%;
   /* border: solid red; */
+ /* 2. Use flexbox to perfectly center the image inside this wrapper */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bg-ring img{
-  /* border: solid; */
-  width: 100%;
-  height: auto;
+  /* 3. Control the size of the ring here instead */
+  /* width: 90%;  */
+  max-width: 75%; /* Keeps it from getting too massive on wide screens */
+  /* height: auto; */
   object-fit: contain;
+  
+  /* 4. Apply the animation directly to the image */
+  animation: slow-spin 20s linear infinite;
+  
+  /* 5. Force the rotation point to be the exact dead-center of the image pixels */
+  transform-origin: center center;
 }
 
+
+
+@keyframes slow-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .huntress-character-image{
   position: absolute;
   /* left: 50%;
