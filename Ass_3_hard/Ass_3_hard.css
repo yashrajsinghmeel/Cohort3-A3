@@ -94,22 +94,22 @@
   /* Neon Pink and Transparent Diffused Gradient */
   /* These are perfect for hovering over character cards, image overlays, or creating a glowing "floor" effect at the bottom of a container. */
 
-  --clr-gradient-bg-fade-to-bottom: linear-gradient(
+  --transparent-diffused-gradient-bg-fade-to-bottom: linear-gradient(
     to bottom,
     rgba(255, 0, 127, 0.4) 0%,
     rgba(255, 0, 127, 0) 100%
   );
-  --clr-gradient-bg-corner-spotlight-overlay-right: radial-gradient(
+  --transparent-diffused-gradient-bg-corner-spotlight-overlay-right: radial-gradient(
     circle at top right,
     rgba(255, 0, 127, 0.5) 0%,
     transparent 70%
   );
-  --clr-gradient-bg-corner-spotlight-overlay-left: radial-gradient(
+  --transparent-diffused-gradient-bg-corner-spotlight-overlay-left: radial-gradient(
     circle at top left,
     rgba(255, 0, 127, 0.5) 0%,
     transparent 70%
   );
-  --clr-gradient-bg-subtle-edge-bleed: linear-gradient(
+  --transparent-diffused-gradient-bg-subtle-edge-bleed: linear-gradient(
     90deg,
     transparent 0%,
     rgba(255, 0, 127, 0.15) 50%,
@@ -154,14 +154,17 @@ nav {
   display: flex;
   justify-content: space-around;
   top: 0;
-  border: solid black;
+  /* border: solid; */
   height: 100px;
+  padding: 0 20px;
 }
 
 .logo {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   /* align-items: center; */ /* doubt:2*/
+  width: 100%;
   height: 100%;
   flex-grow: 1; /* Takes 1 part of space */
   flex-basis: 0;
@@ -169,13 +172,14 @@ nav {
 }
 .logo img {
   width: 80%;
+  min-width: 300px;
   /* align-self: center; */
   /* border: solid; */
-  /* flex-shrink:0; */
+  flex-shrink:0;
 }
 .navLinks {
   font-family: "kallisto-bold";
-  font-size: larger;
+  font-size: small;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,6 +189,7 @@ nav {
   /* border: solid; */
 }
 .navLinks ul {
+  text-transform: uppercase;
   width: 100%;
   height: 100%;
   /* border: solid; */
@@ -195,6 +200,12 @@ nav {
   list-style: none;
   text-decoration: none;
 }
+
+.navLinks ul li:hover{
+  color: var(--clr-border-electric-magenta);
+  scale: 1.2;
+  border-bottom: solid var(--clr-border-electric-magenta);
+}
 .navLinks ul a {
   color: inherit;
   text-decoration: none;
@@ -202,6 +213,7 @@ nav {
 }
 .contact-btn {
   font-family: "Kallisto-bold";
+  font-size: larger;
   display: flex;
   justify-content: center;
   height: 100%;
@@ -210,20 +222,30 @@ nav {
   /* border: solid; */
 }
 .contact-btn button {
+  text-transform: capitalize;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 7%;
+  gap: 5%;
   border: solid var(--clr-border-electric-magenta);
-  width: 62%;
-  height: 50%;
+  width: 290px ;
+  height: 55px ;
   align-self: center;
   border-radius: 25px;
 }
 
+.contact-btn button:hover{
+  box-shadow: var(--box-shadow-inner-and-outer-glow);
+  scale: 1.05;
+}
+
 .contact-btn button img {
   /* align-self: self-end; */
-  height: 60%;
+  height: 50%;
+}
+
+.contact-btn button:hover img{
+  scale: 1.5;
 }
 
 main {
@@ -232,25 +254,104 @@ main {
 
 .hero {
   position: relative;
-  border: solid;
+  /* border: solid; */
   width: 100%;
   height: calc(100vh - 100px);
 }
 
-.hero .huntress-background {
+.hero .huntress-background-slider-wrapper {
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 80%;
-  border: solid;
+  height: 100%;
+  /* border: solid; */
+  overflow: hidden;
+}
+
+.huntress-background-slider-wrapper .slides-container{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  /* border:solid green; */
+  margin: auto;
+  overflow-y: scroll; /* Enables vertical scrolling inside the box */
+  scroll-behavior: smooth; /* Glides smoothly when clicking a dot */
+  
+  /* The CSS Scroll Snap Magic */
+  scroll-snap-type: y mandatory; 
+  
+  /* Hide the ugly default scrollbar */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+}
+
+.slides-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.slide{
+  height: 100%;
+  width: 100%;
+  scroll-snap-align: start; /* Snaps perfectly to the top edge */
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the images perfectly in the middle */
+}
+
+.slide-content{
+position: relative;
+  width: 100%;
+  /* max-width: 600px; Adjust this to fit your image dimensions */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+/* border: solid rgb(1, 37, 167); */
+}
+
+.slide-content .bg-ring{
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 99%;
+  /* border: solid red; */
+}
+.bg-ring img{
+  /* border: solid; */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.huntress-character-image{
+  position: absolute;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%); */
+  z-index: 2;
+  /* display: flex;
+ justify-content: center; */
+  height: 100%;
+  /* transform: translateX(50%); */
+  /* border: solid green; */
+}
+
+.huntress-character-image img{
+  height: 100%;
+  object-fit: contain;
+  /* border: solid yellow; */
 }
 
 .hero .info-foreground {
+  /* margin-top: 20px ; */
   padding: 0 5%;
   display: flex;
   width: 100%;
-  height: 80%;
-  border: solid;
+  height: 100%;
+  z-index: 10;
+  /* border: solid; */
 }
 
 .hero .info-foreground .intro-text {
@@ -264,6 +365,7 @@ main {
 }
 
 .intro-text .eyebrow-text {
+  color: var(--clr-headings-vivid-neon);
   font-family: var(--font-Corpta);
   font-size: 2rem;
   /* border: solid; */
@@ -276,16 +378,36 @@ main {
   /* border: solid; */
 }
 
+.main-heading-text span:first-child{
+  color: var(--clr-text-high-readability);
+}
+
 .intro-text .subheading-text {
+  font-size: 1.2rem;
   font-family: var(--font-kallisto-bold);
+  color: var(--clr-text-muted-silver);
   /* border: solid; */
 }
+
+.subheading-text span{
+  color: var(--clr-text-high-readability);
+}
+
 .intro-text .body-text {
   width: 60%;
   line-height: 1.2;
   font-family: var(--font-ElMessiri);
+  color: var(--clr-text-dimmed-tech);
+  font-size: 1.1rem;
   /* border: solid; */
 }
+
+.body-text:hover{
+  color: var(--clr-text-high-readability);
+  cursor: pointer;
+
+}
+
 .intro-text .btn-wrapper {
   display: flex;
   gap: 15%;
@@ -302,8 +424,9 @@ main {
 }
 
 .left-button button {
+  font-size: large;
   height: 60px;
-  width: 250px;
+  width: 280px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -311,23 +434,60 @@ main {
   gap: 5px;
   border: solid var(--clr-border-cyberpunk-hot-pink);
   /* box-shadow: var(--box-shadow-inner-and-outer-glow); */
-  background: var(--clr-gradient-bg-corner-spotlight-overlay-right);
+  background: var(--transparent-diffused-gradient-bg-corner-spotlight-overlay-right);
+}
+
+.left-button button:hover{
+  box-shadow: var(--box-shadow-intense-overdrive);
+  scale: 1.05;
 }
 
 .left-button button svg {
   height: 30px;
 }
 
+.left-button button:hover svg {
+  scale: 1.5;
+}
+
 .hero .info-foreground .empty-character-window {
   flex-basis: 0;
   flex-grow: 3;
-  border: solid;
+  /* border: solid; */
 }
 
 .hero .huntress-abilities {
   flex-basis: 0;
   flex-grow: 1;
-  border: solid;
+  /* border: solid; */
+}
+
+/* --- 5. Vertical Navigation Dots --- */
+.slider-nav {
+  position: absolute;
+  right: 40px; 
+  top: 50%;
+  transform: translateY(-50%); /* Centers the dots vertically on the right */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  z-index: 10; /* Keeps dots clickable and above the images */
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #E0E0E0; /* High Readability Gray */
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-dot:hover {
+  border-color: #FF007F; /* Neon Pink */
+  background-color: #FF007F;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
 }
 
 /* 
