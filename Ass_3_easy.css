@@ -1,158 +1,155 @@
 @font-face {
-    font-family: Acumin;
-    src: url(./Ass_3_easy_assets/AcuminR.otf);
+  font-family: Acumin;
+  src: url(./Ass_3_easy_assets/AcuminR.otf);
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body{
-    height: 100%;
-    width: 100%;
-    font-family: "Acumin";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
- /* border: solid green; */
- padding: 2% 2% 2% 2%;
- background-image: url(./Ass_3_easy_assets/background.png);
- background-size: cover;
- background-position: center;
- color: white;
-}
-nav div{
-    /* font-size: large; */
-}
-nav{
-    /* border: solid ; */
-    display: flex;
-    text-align: end;
-    padding: 0 8%;
-    justify-content: space-between;
-
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Acumin";
 }
 
-
-
-nav span:hover{
-    color: #b077e3;
-    cursor: pointer;
+body {
+  /* border: solid green; */
+  padding: 2% 2% 2% 2%;
+  background-image: url(./Ass_3_easy_assets/background.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
-header{
-    /* border: solid red; */
-    padding: 0 8%;
-    margin-bottom: 10px;
+nav div {
+  /* font-size: large; */
 }
-h1{
-    all: unset;
-    font-size: x-large;
-}
-main{
-    /* border: solid yellow; */
-    height: 95%;
-    padding: 0 5% 0 5%;
+nav {
+  /* border: solid ; */
+  display: flex;
+  text-align: end;
+  padding: 0 8%;
+  justify-content: space-between;
 }
 
-.cardContainer{
-    /* border: solid green; */
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap:5%;
+nav span:hover {
+  color: #b077e3;
+  cursor: pointer;
+}
+header {
+  /* border: solid red; */
+  padding: 0 8%;
+  margin-bottom: 10px;
+}
+h1 {
+  all: unset;
+  font-size: x-large;
+}
+main {
+  /* border: solid yellow; */
+  height: 95%;
+  padding: 0 5% 0 5%;
 }
 
-.card{
-    background: rgba(255, 255, 255, 0.2); 
-     backdrop-filter: blur(5px); 
-  -webkit-backdrop-filter: blur(5px); 
-    flex-basis: 17%;
-    /* border: solid ; */
-width: 20%;
-height: 47%;
-border-radius: 20px;
-/* margin-bottom: 3%; */
-padding: 1.5%;
+.cardContainer {
+  /* border: solid green; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5%;
 }
 
-.card .image{
-    border: solid;
-    width: 100%;
-    height: 70%;
-    border-radius:17px ;
-    overflow: hidden;
-}
-.card .image:hover{
-    border-color: #b077e3;
-    cursor: pointer;
-    scale: 1.01;
-}
-.image img{
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 100%;
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  flex-basis: 17%;
+  /* border: solid ; */
+  width: 20%;
+  height: 47%;
+  border-radius: 20px;
+  /* margin-bottom: 3%; */
+  padding: 1.5%;
 }
 
-.card .textContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* border: solid; */
-    height: 30%;
+.card .image {
+  border: solid;
+  width: 100%;
+  height: 70%;
+  border-radius: 17px;
+  overflow: hidden;
+}
+.card .image:hover {
+  border-color: #b077e3;
+  cursor: pointer;
+  scale: 1.01;
+}
+.image img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
 }
 
-.card .textContent .description{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: solid; */
-    padding-top: 8%;
-    margin: 1%;
-    height: 30%;
+.card .textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid; */
+  height: 30%;
 }
-.textContent .description .itemName{
-    display: flex;
-    align-items: center;
-    height: 100%;
+
+.card .textContent .description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: solid; */
+  padding-top: 8%;
+  margin: 1%;
+  height: 30%;
+}
+.textContent .description .itemName {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .textContent .description .likes {
-    /* border: solid; */
-    width: 40%;
-    display: flex;
-    gap: 15%;
-    align-items: center;
-    justify-content: space-between;
+  /* border: solid; */
+  width: 40%;
+  display: flex;
+  gap: 15%;
+  align-items: center;
+  justify-content: space-between;
 }
-.likes .likeIcon img{
-    width: 25px;
-    filter: invert(100%);
-    
+.likes .likeIcon img {
+  width: 25px;
+  filter: invert(100%);
 }
-.likeIcon img:hover{
-    scale: 1.05;
-    cursor: pointer;
-}
-
-.textContent .capsuleButton{
-border: solid #b077e3;
-font-size: large;
-padding: 0 1rem;
-margin: 0 auto;
-background-color: transparent;
-width:85% ;
-height: 42%;
-color: white;
-/* font-weight: bold; */
-border-radius: 9999px;
+.likeIcon img:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 
-.textContent .capsuleButton:hover{
-    color: #b077e3;
-    scale: 1.01;
-    cursor: pointer;
+.textContent .capsuleButton {
+  border: solid #b077e3;
+  font-size: large;
+  padding: 0 1rem;
+  margin: 0 auto;
+  background-color: transparent;
+  width: 85%;
+  height: 42%;
+  color: white;
+  /* font-weight: bold; */
+  border-radius: 9999px;
+}
+
+.textContent .capsuleButton:hover {
+  color: #b077e3;
+  scale: 1.01;
+  cursor: pointer;
 }
 
 /* element {
@@ -200,7 +197,7 @@ If you want to refine this design further, let me know:
 
  */
 
- /* 
+/* 
  To vertically center text within an element, choose the method that matches your layout requirements.
 ## 1. Flexbox Method (Best for Most Layouts)
 Apply Flexbox to the container element holding the text. This handles single or multiple lines of text perfectly.
@@ -249,7 +246,7 @@ To implement this on your project, please let me know:
  
  */
 
- /* .glass-panel {
+/* .glass-panel {
  Semi-transparent white background fill 
   background: rgba(255, 255, 255, 0.2); 
   
